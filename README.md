@@ -1,5 +1,5 @@
 <!-- Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1220,100:1F4E8C&height=200&section=header&text=Hi%20there%20👋&fontSize=50&fontColor=FFFFFF&fontAlignY=38&desc=Vehicle%20Embedded%20Systems%20Engineer%20(Aspiring)&descAlignY=58&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1220,100:1F4E8C&height=200&section=header&text=Hi%20there%20%F0%9F%91%8B&fontSize=50&fontColor=FFFFFF&fontAlignY=38&desc=Vehicle%20Embedded%20Systems%20Engineer%20(Aspiring)&descAlignY=58&descSize=18" width="100%"/>
 
 <div align="center">
 
@@ -77,10 +77,9 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=wowowowooon&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wowowowooon&layout=compact&theme=tokyonight&hide_border=true&langs_count=6"/>
-  <br>
-  <img src="https://streak-stats.demolab.com?user=wowowowooon&theme=tokyonight&hide_border=true" height="170"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=wowowowooon&theme=tokyonight" width="100%"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=wowowowooon&theme=tokyonight" width="49%"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=wowowowooon&theme=tokyonight" width="49%"/>
 </div>
 
 <br>
