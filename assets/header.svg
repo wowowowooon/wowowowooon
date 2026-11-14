@@ -78,112 +78,87 @@
       </g>
     </g>
 
-    <!-- ================= RIGHT : SYMBOLIC ADAS CAR ================= -->
+    <!-- ================= RIGHT : ADAS / V2X TRAFFIC ================= -->
     <defs>
-      <filter id="neon" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="3.5" result="b"/>
-        <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
-      <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
       <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+        <stop offset="0.18" stop-color="#fff" stop-opacity="1"/>
+      </linearGradient>
+      <linearGradient id="fadeT" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#fff" stop-opacity="0"/>
         <stop offset="0.25" stop-color="#fff" stop-opacity="1"/>
       </linearGradient>
-      <mask id="floorMask"><rect x="700" y="230" width="580" height="190" fill="url(#fadeL)"/></mask>
-      <linearGradient id="chev" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#E8F4FF"/><stop offset="1" stop-color="#6FA8FF"/>
+      <mask id="sceneMask"><rect x="690" y="0" width="590" height="420" fill="url(#fadeL)"/></mask>
+      <mask id="topMask"><rect x="690" y="0" width="590" height="420" fill="url(#fadeT)"/></mask>
+      <linearGradient id="roadG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0B1F2A"/><stop offset="1" stop-color="#13283A"/>
       </linearGradient>
+      <g id="car">
+        <rect x="-32" y="-52" width="64" height="104" rx="18" fill="#0A1A24" stroke="#E8F4FF" stroke-width="3"/>
+        <path d="M-24 -26 Q0 -36 24 -26 L20 -8 Q0 -14 -20 -8 Z" fill="#3EF0D0" fill-opacity="0.35" stroke="#3EF0D0" stroke-width="2"/>
+        <path d="M-20 24 Q0 18 20 24 L22 36 Q0 42 -22 36 Z" fill="#3EF0D0" fill-opacity="0.2" stroke="#3EF0D0" stroke-width="2"/>
+        <rect x="-26" y="-56" width="14" height="5" rx="2" fill="#FFFFFF"/>
+        <rect x="12" y="-56" width="14" height="5" rx="2" fill="#FFFFFF"/>
+        <rect x="-26" y="50" width="14" height="5" rx="2" fill="#FF4D3A"/>
+        <rect x="12" y="50" width="14" height="5" rx="2" fill="#FF4D3A"/>
+      </g>
+      <g id="wifi" fill="none" stroke="#7CFF6B" stroke-width="5" stroke-linecap="round">
+        <circle cx="0" cy="0" r="5" fill="#7CFF6B" stroke="none"/>
+        <path d="M-12 -12 A17 17 0 0 1 12 -12"><animate attributeName="opacity" values="0.2;1;1;0.2" keyTimes="0;0.2;0.8;1" dur="1.5s" repeatCount="indefinite"/></path>
+        <path d="M-22 -22 A31 31 0 0 1 22 -22"><animate attributeName="opacity" values="0.2;0.2;1;0.2" keyTimes="0;0.3;0.8;1" dur="1.5s" repeatCount="indefinite"/></path>
+      </g>
     </defs>
-
-    <!-- perspective floor -->
-    <g mask="url(#floorMask)" stroke="#2F6BFF" stroke-opacity="0.35" stroke-width="1">
-      <path d="M1000 240 L700 420 M1000 240 L820 420 M1000 240 L940 420 M1000 240 L1060 420 M1000 240 L1180 420 M1000 240 L1300 420 M1000 240 L1420 420"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate" values="0 0;0 30" dur="1.2s" repeatCount="indefinite"/>
-        <path d="M700 252 H1280 M700 266 H1280 M700 286 H1280 M700 314 H1280 M700 352 H1280 M700 400 H1280"/>
-      </g>
+    <g mask="url(#sceneMask)">
+    <g mask="url(#topMask)">
+      <g><path d="M610 313 h-38" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.2s" begin="1.2s" repeatCount="indefinite"/></path><path d="M742 320 h-88" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></path><path d="M762 108 h-64" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="1.0s" repeatCount="indefinite"/></path><path d="M707 128 h-39" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="1.0s" repeatCount="indefinite"/></path><path d="M707 353 h-40" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3.0s" begin="1.2s" repeatCount="indefinite"/></path><path d="M1149 25 h60" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.7s" begin="1.8s" repeatCount="indefinite"/></path><path d="M1402 375 h55" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3.0s" begin="1.2s" repeatCount="indefinite"/></path><path d="M800 197 h-32" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite"/></path><path d="M1343 330 h56" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.8s" repeatCount="indefinite"/></path><path d="M1386 283 h56" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.7s" begin="1.8s" repeatCount="indefinite"/></path><path d="M697 153 h-72" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.9s" begin="1.4s" repeatCount="indefinite"/></path><path d="M1386 287 h66" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="1.7s" begin="1.3s" repeatCount="indefinite"/></path><path d="M1191 155 h34" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="1.3s" repeatCount="indefinite"/></path><path d="M1187 55 h81" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="1.6s" begin="1.8s" repeatCount="indefinite"/></path><path d="M739 160 h-79" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.3s" begin="0.2s" repeatCount="indefinite"/></path><path d="M670 203 h-51" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.6s" begin="1.8s" repeatCount="indefinite"/></path><path d="M1288 268 h32" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.1s" begin="0.2s" repeatCount="indefinite"/></path><path d="M776 111 h-48" stroke="#2BD9A0" stroke-width="2" stroke-opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="2.7s" begin="0.3s" repeatCount="indefinite"/></path></g>
+      <polygon points="958.3,20 1058.3,20 1300.0,420 700.0,420" fill="url(#roadG)"/>
+      <path d="M1100.6 90.0 L1090.6 108.3 M1114.4 112.9 L1101.6 131.1 M1128.2 135.7 L1112.5 154.0 M1142.1 158.6 L1123.5 176.9 M1155.9 181.4 L1134.4 199.7 M1169.7 204.3 L1145.4 222.6 M1183.5 227.1 L1156.4 245.4" stroke="#C6F432" stroke-width="2.5" stroke-opacity="0.75" filter="url(#neon)"/>
+      <path d="M842.1 200.0 L862.7 222.9 M823.6 228.6 L847.8 251.4 M805.2 257.1 L832.9 280.0 M786.7 285.7 L818.0 308.6 M768.3 314.3 L803.2 337.1 M749.8 342.9 L788.3 365.7 M731.4 371.4 L773.4 394.3" stroke="#C6F432" stroke-width="2.5" stroke-opacity="0.75" filter="url(#neon)"/>
+      <path d="M958.3 20 L700.0 420" stroke="#7CFF6B" stroke-width="3" filter="url(#neon)"/>
+      <path d="M1058.3 20 L1300.0 420" stroke="#7CFF6B" stroke-width="3" filter="url(#neon)"/>
+      <path d="M991.7 20 L900.0 420" stroke="#7CFF6B" stroke-width="4" stroke-dasharray="26 30" filter="url(#neon)"><animate attributeName="stroke-dashoffset" values="0;-56" dur="0.5s" repeatCount="indefinite"/></path>
+      <path d="M1025.0 20 L1100.0 420" stroke="#7CFF6B" stroke-width="4" stroke-dasharray="26 30" filter="url(#neon)"><animate attributeName="stroke-dashoffset" values="0;-56" dur="0.5s" repeatCount="indefinite"/></path>
+      <path transform="translate(1006.5,110) scale(0.32)" d="M0 -14 L10 0 H4 V12 H-4 V0 H-10 Z" fill="#7CFF6B" opacity="0.8"/>
+      <path transform="translate(957.5,60) scale(0.23)" d="M0 -14 L10 0 H4 V12 H-4 V0 H-10 Z" fill="#7CFF6B" opacity="0.8"/>
+      <path transform="translate(1101.0,170) scale(0.43)" d="M0 -14 L10 0 H4 V12 H-4 V0 H-10 Z" fill="#7CFF6B" opacity="0.8"/>
+      <path d="M832.8 345 L1004.6 200" stroke="#3EF0D0" stroke-width="1.5" stroke-dasharray="4 6" stroke-opacity="0.6"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"/></path>
+      <path d="M1146.6 285 L1004.6 200" stroke="#3EF0D0" stroke-width="1.5" stroke-dasharray="4 6" stroke-opacity="0.6"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"/></path>
+      <path d="M1004.6 200 L927.8 128" stroke="#3EF0D0" stroke-width="1.5" stroke-dasharray="4 6" stroke-opacity="0.6"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"/></path>
+      <path d="M1004.6 200 L1070.2 92" stroke="#3EF0D0" stroke-width="1.5" stroke-dasharray="4 6" stroke-opacity="0.6"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"/></path>
+      <path d="M832.8 345 L1146.6 285" stroke="#3EF0D0" stroke-width="1.5" stroke-dasharray="4 6" stroke-opacity="0.6"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"/></path>
+      <ellipse cx="1070.2" cy="92" rx="26.1" ry="13.8" fill="#2FD3FF" fill-opacity="0.10" stroke="#2FD3FF" stroke-opacity="0.45" stroke-width="0.5"/>
+      <g filter="url(#neon)"><ellipse cx="1070.2" cy="92" rx="10.4" ry="5.5" fill="none" stroke="#2FD3FF" stroke-width="1.3" opacity="0"><animate attributeName="rx" values="10.4;34.8" dur="2.1s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="ry" values="5.5;18.4" dur="2.1s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="0.8s" repeatCount="indefinite"/></ellipse><ellipse cx="1070.2" cy="92" rx="10.4" ry="5.5" fill="none" stroke="#2FD3FF" stroke-width="1.3" opacity="0"><animate attributeName="rx" values="10.4;34.8" dur="2.1s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="ry" values="5.5;18.4" dur="2.1s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.5s" repeatCount="indefinite"/></ellipse><ellipse cx="1070.2" cy="92" rx="10.4" ry="5.5" fill="none" stroke="#2FD3FF" stroke-width="1.3" opacity="0"><animate attributeName="rx" values="10.4;34.8" dur="2.1s" begin="2.2s" repeatCount="indefinite"/><animate attributeName="ry" values="5.5;18.4" dur="2.1s" begin="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="2.2s" repeatCount="indefinite"/></ellipse></g>
+      <use href="#car" transform="translate(1070.2,92) scale(0.27)"/>
+      <use href="#wifi" transform="translate(1070.2,72.4) scale(0.25)" filter="url(#neon)"/>
+      <ellipse cx="927.8" cy="128" rx="32.3" ry="17.0" fill="#2FD3FF" fill-opacity="0.10" stroke="#2FD3FF" stroke-opacity="0.45" stroke-width="0.6"/>
+      <g filter="url(#neon)"><ellipse cx="927.8" cy="128" rx="12.9" ry="6.8" fill="none" stroke="#2FD3FF" stroke-width="1.5" opacity="0"><animate attributeName="rx" values="12.9;43.1" dur="2.1s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="ry" values="6.8;22.7" dur="2.1s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="0.3s" repeatCount="indefinite"/></ellipse><ellipse cx="927.8" cy="128" rx="12.9" ry="6.8" fill="none" stroke="#2FD3FF" stroke-width="1.5" opacity="0"><animate attributeName="rx" values="12.9;43.1" dur="2.1s" begin="1.0s" repeatCount="indefinite"/><animate attributeName="ry" values="6.8;22.7" dur="2.1s" begin="1.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.0s" repeatCount="indefinite"/></ellipse><ellipse cx="927.8" cy="128" rx="12.9" ry="6.8" fill="none" stroke="#2FD3FF" stroke-width="1.5" opacity="0"><animate attributeName="rx" values="12.9;43.1" dur="2.1s" begin="1.7s" repeatCount="indefinite"/><animate attributeName="ry" values="6.8;22.7" dur="2.1s" begin="1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.7s" repeatCount="indefinite"/></ellipse></g>
+      <use href="#car" transform="translate(927.8,128) scale(0.33)"/>
+      <use href="#wifi" transform="translate(927.8,103.7) scale(0.31)" filter="url(#neon)"/>
+      <ellipse cx="1004.6" cy="200" rx="44.7" ry="23.6" fill="#2FD3FF" fill-opacity="0.10" stroke="#2FD3FF" stroke-opacity="0.45" stroke-width="0.8"/>
+      <g filter="url(#neon)"><ellipse cx="1004.6" cy="200" rx="17.9" ry="9.4" fill="none" stroke="#2FD3FF" stroke-width="1.9" opacity="0"><animate attributeName="rx" values="17.9;59.6" dur="2.1s" begin="1.0s" repeatCount="indefinite"/><animate attributeName="ry" values="9.4;31.4" dur="2.1s" begin="1.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.0s" repeatCount="indefinite"/></ellipse><ellipse cx="1004.6" cy="200" rx="17.9" ry="9.4" fill="none" stroke="#2FD3FF" stroke-width="1.9" opacity="0"><animate attributeName="rx" values="17.9;59.6" dur="2.1s" begin="1.7s" repeatCount="indefinite"/><animate attributeName="ry" values="9.4;31.4" dur="2.1s" begin="1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.7s" repeatCount="indefinite"/></ellipse><ellipse cx="1004.6" cy="200" rx="17.9" ry="9.4" fill="none" stroke="#2FD3FF" stroke-width="1.9" opacity="0"><animate attributeName="rx" values="17.9;59.6" dur="2.1s" begin="2.4s" repeatCount="indefinite"/><animate attributeName="ry" values="9.4;31.4" dur="2.1s" begin="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="2.4s" repeatCount="indefinite"/></ellipse></g>
+      <use href="#car" transform="translate(1004.6,200) scale(0.46)"/>
+      <use href="#wifi" transform="translate(1004.6,166.4) scale(0.43)" filter="url(#neon)"/>
+      <ellipse cx="1146.6" cy="285" rx="59.3" ry="31.3" fill="#2FD3FF" fill-opacity="0.10" stroke="#2FD3FF" stroke-opacity="0.45" stroke-width="1.1"/>
+      <g filter="url(#neon)"><ellipse cx="1146.6" cy="285" rx="23.7" ry="12.5" fill="none" stroke="#2FD3FF" stroke-width="2.3" opacity="0"><animate attributeName="rx" values="23.7;79.1" dur="2.1s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="ry" values="12.5;41.7" dur="2.1s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="0.5s" repeatCount="indefinite"/></ellipse><ellipse cx="1146.6" cy="285" rx="23.7" ry="12.5" fill="none" stroke="#2FD3FF" stroke-width="2.3" opacity="0"><animate attributeName="rx" values="23.7;79.1" dur="2.1s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="ry" values="12.5;41.7" dur="2.1s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.2s" repeatCount="indefinite"/></ellipse><ellipse cx="1146.6" cy="285" rx="23.7" ry="12.5" fill="none" stroke="#2FD3FF" stroke-width="2.3" opacity="0"><animate attributeName="rx" values="23.7;79.1" dur="2.1s" begin="1.9s" repeatCount="indefinite"/><animate attributeName="ry" values="12.5;41.7" dur="2.1s" begin="1.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.9s" repeatCount="indefinite"/></ellipse></g>
+      <use href="#car" transform="translate(1146.6,285) scale(0.61)"/>
+      <use href="#wifi" transform="translate(1146.6,240.4) scale(0.58)" filter="url(#neon)"/>
+      <ellipse cx="832.8" cy="345" rx="69.6" ry="36.7" fill="#2FD3FF" fill-opacity="0.10" stroke="#2FD3FF" stroke-opacity="0.45" stroke-width="1.3"/>
+      <g filter="url(#neon)"><ellipse cx="832.8" cy="345" rx="27.8" ry="14.7" fill="none" stroke="#2FD3FF" stroke-width="2.6" opacity="0"><animate attributeName="rx" values="27.8;92.8" dur="2.1s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="ry" values="14.7;48.9" dur="2.1s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="0.0s" repeatCount="indefinite"/></ellipse><ellipse cx="832.8" cy="345" rx="27.8" ry="14.7" fill="none" stroke="#2FD3FF" stroke-width="2.6" opacity="0"><animate attributeName="rx" values="27.8;92.8" dur="2.1s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="ry" values="14.7;48.9" dur="2.1s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="0.7s" repeatCount="indefinite"/></ellipse><ellipse cx="832.8" cy="345" rx="27.8" ry="14.7" fill="none" stroke="#2FD3FF" stroke-width="2.6" opacity="0"><animate attributeName="rx" values="27.8;92.8" dur="2.1s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="ry" values="14.7;48.9" dur="2.1s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0" dur="2.1s" begin="1.4s" repeatCount="indefinite"/></ellipse></g>
+      <use href="#car" transform="translate(832.8,345) scale(0.72)"/>
+      <use href="#wifi" transform="translate(832.8,292.7) scale(0.68)" filter="url(#neon)"/>
     </g>
-    <!-- floor glow -->
-    <ellipse cx="1010" cy="322" rx="260" ry="30" fill="#2F6BFF" opacity="0.35" filter="url(#soft)"/>
-
-    <!-- data specks -->
-    <g fill="#9FD8FF">
-      <rect x="760" y="380" width="4" height="4"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></rect>
-      <rect x="880" y="356" width="3" height="3"><animate attributeName="opacity" values="0;1;0" dur="1.6s" begin="0.4s" repeatCount="indefinite"/></rect>
-      <rect x="1240" y="372" width="4" height="4"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.9s" repeatCount="indefinite"/></rect>
-      <rect x="1120" y="398" width="3" height="3"><animate attributeName="opacity" values="0;1;0" dur="2.2s" begin="1.2s" repeatCount="indefinite"/></rect>
-      <rect x="980" y="404" width="4" height="4"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.2s" repeatCount="indefinite"/></rect>
     </g>
-
-    <!-- chevrons (direction of travel) -->
-    <g fill="none" stroke="url(#chev)" stroke-linecap="square" stroke-linejoin="miter" filter="url(#neon)">
-      <path d="M800 92 L810 104 L800 116" stroke-width="3"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="0s" repeatCount="indefinite"/></path>
-      <path d="M850 84 L866 104 L850 124" stroke-width="4"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="0.15s" repeatCount="indefinite"/></path>
-      <path d="M915 74 L938 104 L915 134" stroke-width="5"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="0.3s" repeatCount="indefinite"/></path>
-      <path d="M1000 62 L1032 104 L1000 146" stroke-width="7"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="0.45s" repeatCount="indefinite"/></path>
-      <path d="M1110 46 L1154 104 L1110 162" stroke-width="9"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" begin="0.6s" repeatCount="indefinite"/></path>
-    </g>
-
-    <!-- sensor ripples from the nose -->
-    <g fill="none" stroke="#3EF0D0" filter="url(#neon)">
-      <ellipse cx="1196" cy="318" rx="20" ry="5" stroke-width="2.5">
-        <animate attributeName="rx" values="20;150" dur="2.4s" repeatCount="indefinite"/>
-        <animate attributeName="ry" values="5;34" dur="2.4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0" dur="2.4s" repeatCount="indefinite"/>
-      </ellipse>
-      <ellipse cx="1196" cy="318" rx="20" ry="5" stroke-width="2.5" opacity="0">
-        <animate attributeName="rx" values="20;150" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
-        <animate attributeName="ry" values="5;34" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
-      </ellipse>
-      <ellipse cx="1196" cy="318" rx="20" ry="5" stroke-width="2.5" opacity="0">
-        <animate attributeName="rx" values="20;150" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="ry" values="5;34" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
-      </ellipse>
-    </g>
-
-    <!-- car symbol (neon wireframe coupe) -->
-    <g transform="translate(790,316)">
-      <g fill="none" stroke="#3EF0D0" stroke-linejoin="round" stroke-linecap="round" filter="url(#neon)">
-        <!-- body silhouette -->
-        <path stroke-width="3" d="M10 -30 L8 -58 Q12 -72 40 -76 L120 -84 Q170 -122 230 -126 Q282 -126 322 -92 L394 -78 Q418 -72 420 -50 L416 -30 L374 -30 A44 44 0 0 0 286 -30 L144 -30 A44 44 0 0 0 56 -30 Z"/>
-        <!-- windows -->
-        <path stroke-width="2" d="M142 -86 Q180 -112 226 -115 L230 -90 Z M244 -115 Q276 -113 300 -91 L242 -90 Z"/>
-        <!-- wireframe facets -->
-        <g stroke-width="1" stroke-opacity="0.55">
-          <path d="M40 -76 L144 -30 M120 -84 L200 -30 M230 -90 L286 -30 M322 -92 L374 -30 M394 -78 L350 -56 M200 -30 L230 -90 M144 -30 L120 -84 M40 -60 L394 -66 M286 -30 L322 -92"/>
-        </g>
-        <!-- wheels -->
-        <circle cx="100" cy="-30" r="36" stroke-width="3"/>
-        <circle cx="330" cy="-30" r="36" stroke-width="3"/>
-        <circle cx="100" cy="-30" r="20" stroke-width="1.5" stroke-opacity="0.7"/>
-        <circle cx="330" cy="-30" r="20" stroke-width="1.5" stroke-opacity="0.7"/>
-        <g stroke-width="1.5" stroke-opacity="0.8">
-          <path d="M100 -50 V-10 M80 -30 H120">
-            <animateTransform attributeName="transform" type="rotate" from="0 100 -30" to="360 100 -30" dur="0.6s" repeatCount="indefinite"/>
-          </path>
-          <path d="M330 -50 V-10 M310 -30 H350">
-            <animateTransform attributeName="transform" type="rotate" from="0 330 -30" to="360 330 -30" dur="0.6s" repeatCount="indefinite"/>
-          </path>
-        </g>
-      </g>
-      <!-- lights -->
-      <path d="M402 -68 L418 -62" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" filter="url(#neon)"/>
-      <path d="M8 -62 L16 -60" stroke="#FF4D3A" stroke-width="4" stroke-linecap="round" filter="url(#neon)"/>
-      <!-- light sweep across the body -->
-      <clipPath id="bodyClip"><path d="M10 -30 L8 -58 Q12 -72 40 -76 L120 -84 Q170 -122 230 -126 Q282 -126 322 -92 L394 -78 Q418 -72 420 -50 L416 -30 L374 -30 A44 44 0 0 0 286 -30 L144 -30 A44 44 0 0 0 56 -30 Z"/></clipPath>
-      <g clip-path="url(#bodyClip)"><rect x="0" y="-130" width="40" height="110" fill="#BFFFF2" opacity="0.18" transform="skewX(-20)">
-        <animate attributeName="x" values="-40;440" dur="3s" repeatCount="indefinite"/>
-      </rect></g>
-    </g>
-
-    <!-- minimal HUD tags -->
+    <!-- HUD tag -->
     <g class="mono" font-size="11" font-weight="700">
-      <text x="1256" y="372" text-anchor="end" fill="#3EF0D0">RADAR · LiDAR</text>
-      <circle cx="1160" cy="214" r="3.5" fill="#3DDC84"><animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/></circle>
-      <text x="1170" y="218" fill="#3DDC84">ADAS ON</text>
+      <rect x="1124" y="22" width="134" height="26" rx="13" fill="#050912" fill-opacity="0.8" stroke="#2BD9A0" stroke-opacity="0.6"/>
+      <circle cx="1140" cy="35" r="4" fill="#7CFF6B"><animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/></circle>
+      <text x="1150" y="39" fill="#7CFF6B">ADAS · V2X ON</text>
     </g>
+
   </g>
   <rect x="0.5" y="0.5" width="1279" height="419" rx="20" fill="none" stroke="#2C4370"/>
 </svg>

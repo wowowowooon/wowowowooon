@@ -5,10 +5,6 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2800&pause=900&color=4FD1C5&center=true&vCenter=true&width=640&lines=%24+candump+can0+%E2%80%94+listening+to+the+vehicle;%24+sensor+%E2%86%92+PCB+%E2%86%92+firmware+%E2%86%92+real+car;%24+LiDAR+%2B+IMU+%E2%86%92+perception+%E2%86%92+control+(ADAS);%24+measure.+build.+validate+on+track." alt="typing"/>
 
-<br>
-
-> **"측정할 수 없으면 개선할 수 없다. 그래서 계측 장비부터 직접 만듭니다."**
-
 </div>
 
 <br>
