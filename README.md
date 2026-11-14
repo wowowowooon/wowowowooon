@@ -1,11 +1,13 @@
 <!-- Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1220,100:1F4E8C&height=200&section=header&text=Hi%20there%20%F0%9F%91%8B&fontSize=50&fontColor=FFFFFF&fontAlignY=38&desc=Vehicle%20Embedded%20Systems%20Engineer%20(Aspiring)&descAlignY=58&descSize=18" width="100%"/>
+<img src="./assets/header.svg" width="100%" alt="Moon Jaewoong · Vehicle Embedded Systems · ADAS"/>
 
 <div align="center">
 
-<a href="https://github.com/wowowowooon">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=1F8FFF&center=true&vCenter=true&width=600&lines=Sensor+%E2%86%92+PCB+%E2%86%92+Firmware+%E2%86%92+Real+Car;ESP32+%7C+Teensy+%7C+STM32+%7C+Raspberry+Pi;CAN+%7C+I2C+%7C+UART+%7C+MQTT;Measure+it.+Build+it.+Validate+it+on+track." alt="Typing SVG"/>
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2800&pause=900&color=4FD1C5&center=true&vCenter=true&width=640&lines=%24+candump+can0+%E2%80%94+listening+to+the+vehicle;%24+sensor+%E2%86%92+PCB+%E2%86%92+firmware+%E2%86%92+real+car;%24+LiDAR+%2B+IMU+%E2%86%92+perception+%E2%86%92+control+(ADAS);%24+measure.+build.+validate+on+track." alt="typing"/>
+
+<br>
+
+> **"측정할 수 없으면 개선할 수 없다. 그래서 계측 장비부터 직접 만듭니다."**
 
 </div>
 
@@ -14,8 +16,9 @@
 ## 🙋‍♂️ About Me
 
 - 🎓 아주대학교 **기계공학과**
-- 🚗 **차량용 임베디드 시스템** 엔지니어를 목표로 하고 있습니다
-- 🏁 자작자동차 동아리 **A-FA** (BAJA) · 자율주행 레이싱 **ROBORACER 2026** 출전
+- 🚗 **차량용 임베디드 시스템 · ADAS** 엔지니어를 목표로 하고 있습니다
+- 🏁 자작자동차 동아리 **A-FA** (BAJA · e-Formula) · 자율주행 레이싱 **ROBORACER 2026** 출전
+- 👁️ LiDAR·IMU 기반 인지 → 제어를 1:10 자율주행차에 올려 실차 주행까지 해봤습니다
 - 🔧 센서 선정 → 회로·PCB 설계 → MCU 펌웨어 → 실차 검증까지 **직접 끝까지** 해보는 걸 좋아합니다
 - 📘 지금은 **C/C++ · Embedded C** (volatile, ISR, 링 버퍼, PID, CAN 파싱)를 기초부터 다시 다지는 중입니다
 

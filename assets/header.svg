@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070C18"/>
+      <stop offset="0.55" stop-color="#0E1A33"/>
+      <stop offset="1" stop-color="#241020"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.76" cy="0.6" r="0.5">
+      <stop offset="0" stop-color="#E7352C" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#E7352C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#9FC2FF"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#3B5A8C" stroke-opacity="0.14"/>
+    </pattern>
+    <clipPath id="card"><rect width="1280" height="420" rx="20"/></clipPath>
+    <clipPath id="logClip"><rect x="64" y="318" width="600" height="72"/></clipPath>
+    <clipPath id="roadClip"><rect x="700" y="0" width="580" height="420"/></clipPath>
+    <style>
+      .mono{font-family:'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace}
+      .pre text{white-space:pre}
+      .sans{font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic','Segoe UI',sans-serif}
+    </style>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="420" fill="url(#bg)"/>
+    <rect width="1280" height="420" fill="url(#grid)"/>
+    <rect width="1280" height="420" fill="url(#glow)"/>
+
+    <!-- ================= LEFT : IDENTITY ================= -->
+    <g>
+      <circle cx="70" cy="66" r="5" fill="#FF4D3A">
+        <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="84" y="71" class="mono" font-size="14" font-weight="700" letter-spacing="4" fill="#FF6B4A">VEHICLE EMBEDDED SYSTEMS · ADAS</text>
+    </g>
+
+    <text x="62" y="152" class="sans" font-size="66" font-weight="900" letter-spacing="1" fill="url(#nameGrad)">MOON JAEWOONG</text>
+    <rect x="66" y="168" width="0" height="4" rx="2" fill="#FF4D3A">
+      <animate attributeName="width" values="0;120;120" keyTimes="0;0.3;1" dur="3s" fill="freeze"/>
+    </rect>
+
+    <text x="64" y="218" class="sans" font-size="26" font-weight="700" fill="#E6EDF8">센서 핀 하나에서, 결승선까지.</text>
+    <text x="64" y="248" class="sans" font-size="16" fill="#8FA4C8">I build the hardware that reads the car, and the code that lets it see the road.</text>
+
+    <!-- chips -->
+    <g class="mono" font-size="12.5" font-weight="700" fill="#E8EEF9" text-anchor="middle">
+      <rect x="64" y="268" width="150" height="30" rx="15" fill="#13203B" stroke="#3B5A8C"/>
+      <text x="139" y="288">CAN · I2C · UART</text>
+      <rect x="224" y="268" width="196" height="30" rx="15" fill="#13203B" stroke="#3B5A8C"/>
+      <text x="322" y="288">ESP32 · STM32 · Teensy</text>
+      <rect x="430" y="268" width="116" height="30" rx="15" fill="#13203B" stroke="#3B5A8C"/>
+      <text x="488" y="288">ADAS · LiDAR</text>
+      <rect x="556" y="268" width="140" height="30" rx="15" fill="#2A1222" stroke="#E7352C"/>
+      <text x="626" y="288">Real-car Tested</text>
+    </g>
+
+    <!-- live CAN log (candump style) -->
+    <rect x="56" y="310" width="620" height="88" rx="10" fill="#050912" stroke="#1E2E50"/>
+    <g clip-path="url(#logClip)" class="mono pre" font-size="12.5" xml:space="preserve">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -126" dur="6s" repeatCount="indefinite"/>
+        <text x="74" y="334"><tspan fill="#5D739B">(0.000)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">0C1</tspan><tspan fill="#C9D6EE">  [8]  3F 2C 00 7D 11 00 A4 05</tspan><tspan fill="#5D739B">  ECU · RPM</tspan></text>
+        <text x="74" y="355"><tspan fill="#5D739B">(0.010)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">1A0</tspan><tspan fill="#C9D6EE">  [6]  02 B8 01 F4 00 3E</tspan><tspan fill="#5D739B">        SUSP · FL FR</tspan></text>
+        <text x="74" y="376"><tspan fill="#5D739B">(0.020)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">2B4</tspan><tspan fill="#C9D6EE">  [8]  00 2B FF D6 03 E8 00 00</tspan><tspan fill="#5D739B">  IMU · PITCH</tspan></text>
+        <text x="74" y="397"><tspan fill="#5D739B">(0.030)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">3E8</tspan><tspan fill="#C9D6EE">  [4]  00 3E 01 9A</tspan><tspan fill="#5D739B">              GPS · SPEED</tspan></text>
+        <text x="74" y="418"><tspan fill="#5D739B">(0.040)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">1A1</tspan><tspan fill="#C9D6EE">  [6]  02 A0 01 E2 00 41</tspan><tspan fill="#5D739B">        SUSP · RL RR</tspan></text>
+        <text x="74" y="439"><tspan fill="#5D739B">(0.050)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">7DF</tspan><tspan fill="#C9D6EE">  [8]  02 01 0C 00 00 00 00 00</tspan><tspan fill="#5D739B">  DIAG · REQ</tspan></text>
+        <!-- repeat first lines for seamless loop -->
+        <text x="74" y="460"><tspan fill="#5D739B">(0.060)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">0C1</tspan><tspan fill="#C9D6EE">  [8]  3F 2C 00 7D 11 00 A4 05</tspan><tspan fill="#5D739B">  ECU · RPM</tspan></text>
+        <text x="74" y="481"><tspan fill="#5D739B">(0.070)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">1A0</tspan><tspan fill="#C9D6EE">  [6]  02 B8 01 F4 00 3E</tspan><tspan fill="#5D739B">        SUSP · FL FR</tspan></text>
+        <text x="74" y="502"><tspan fill="#5D739B">(0.080)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">2B4</tspan><tspan fill="#C9D6EE">  [8]  00 2B FF D6 03 E8 00 00</tspan><tspan fill="#5D739B">  IMU · PITCH</tspan></text>
+        <text x="74" y="523"><tspan fill="#5D739B">(0.090)</tspan><tspan fill="#4FD1C5">  can0  </tspan><tspan fill="#FFD166">3E8</tspan><tspan fill="#C9D6EE">  [4]  00 3E 01 9A</tspan><tspan fill="#5D739B">              GPS · SPEED</tspan></text>
+      </g>
+    </g>
+
+    <!-- ================= RIGHT : CAR IN MOTION ================= -->
+    <g clip-path="url(#roadClip)">
+      <!-- road -->
+      <rect x="700" y="332" width="580" height="88" fill="#0A1222"/>
+      <path d="M700 332 H1280" stroke="#3B5A8C" stroke-width="2"/>
+      <g stroke="#5E7BAE" stroke-width="4" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate" values="0 0;-120 0" dur="0.5s" repeatCount="indefinite"/>
+        <path d="M700 372 H750 M820 372 H870 M940 372 H990 M1060 372 H1110 M1180 372 H1230 M1300 372 H1350 M1420 372 H1470"/>
+      </g>
+
+      <!-- speed lines -->
+      <g stroke="#9FC2FF" stroke-linecap="round" stroke-opacity="0.5">
+        <path d="M760 200 H700" stroke-width="2">
+          <animate attributeName="opacity" values="0;1;0" dur="0.7s" repeatCount="indefinite"/>
+        </path>
+        <path d="M780 240 H710" stroke-width="2">
+          <animate attributeName="opacity" values="0;1;0" dur="0.7s" begin="0.25s" repeatCount="indefinite"/>
+        </path>
+        <path d="M770 280 H720" stroke-width="2">
+          <animate attributeName="opacity" values="0;1;0" dur="0.7s" begin="0.45s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+
+    <!-- car (scaled from a 1280-wide sketch) -->
+    <g transform="translate(86,58) scale(0.92)">
+      <!-- wheels -->
+      <g>
+        <circle cx="860" cy="250" r="40" fill="#0A1020" stroke="#C9D6EE" stroke-width="6"/>
+        <g stroke="#5E7BAE" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" from="0 860 250" to="360 860 250" dur="0.45s" repeatCount="indefinite"/>
+          <path d="M860 222 V278 M832 250 H888 M840 230 L880 270 M880 230 L840 270"/>
+        </g>
+        <circle cx="860" cy="250" r="7" fill="#FF4D3A"/>
+      </g>
+      <g>
+        <circle cx="1160" cy="250" r="40" fill="#0A1020" stroke="#C9D6EE" stroke-width="6"/>
+        <g stroke="#5E7BAE" stroke-width="3">
+          <animateTransform attributeName="transform" type="rotate" from="0 1160 250" to="360 1160 250" dur="0.45s" repeatCount="indefinite"/>
+          <path d="M1160 222 V278 M1132 250 H1188 M1140 230 L1180 270 M1180 230 L1140 270"/>
+        </g>
+        <circle cx="1160" cy="250" r="7" fill="#FF4D3A"/>
+      </g>
+
+      <!-- sprung body: bounces on suspension -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 1;0 0" dur="0.9s" repeatCount="indefinite"/>
+
+        <!-- shocks -->
+        <g stroke="#FF6B4A" stroke-width="6" stroke-linecap="round">
+          <path d="M872 236 L922 166"/>
+          <path d="M1148 236 L1098 168"/>
+        </g>
+        <g fill="none" stroke="#FF6B4A" stroke-width="2">
+          <path d="M884 218 l10 4 M890 210 l10 4 M896 202 l10 4 M902 194 l10 4"/>
+          <path d="M1136 218 l-10 4 M1130 210 l-10 4 M1124 202 l-10 4 M1118 194 l-10 4"/>
+        </g>
+
+        <!-- chassis + roll cage -->
+        <g fill="none" stroke="#E8EEF9" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M822 222 L905 226 L1110 226 L1198 214"/>
+          <path d="M905 226 L948 116 L1066 112 L1112 226"/>
+          <path d="M948 116 L1112 226" stroke-opacity=".4" stroke-width="3"/>
+          <path d="M1066 112 L1150 196 L1198 214"/>
+          <path d="M905 226 L880 188 L948 172"/>
+        </g>
+
+        <!-- ECU -->
+        <rect x="980" y="176" width="74" height="40" rx="7" fill="#050912" stroke="#4FD1C5" stroke-width="2.5"/>
+        <text x="1017" y="202" text-anchor="middle" class="mono" font-size="14" font-weight="800" fill="#4FD1C5">ECU</text>
+
+        <!-- CAN bus lines -->
+        <g fill="none" stroke="#4FD1C5" stroke-width="2" stroke-opacity="0.55">
+          <path id="b1" d="M897 199 C930 205 955 200 980 197"/>
+          <path id="b2" d="M1123 200 C1095 206 1072 200 1054 197"/>
+          <path id="b3" d="M1007 124 L1007 176"/>
+        </g>
+
+        <!-- packets travelling on the bus -->
+        <circle r="4" fill="#FFFFFF">
+          <animateMotion dur="0.8s" repeatCount="indefinite"><mpath href="#b1"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#FFFFFF">
+          <animateMotion dur="0.8s" begin="0.3s" repeatCount="indefinite"><mpath href="#b2"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#FFD166">
+          <animateMotion dur="0.6s" begin="0.15s" repeatCount="indefinite"><mpath href="#b3"/></animateMotion>
+        </circle>
+
+        <!-- sensor nodes -->
+        <circle cx="897" cy="199" r="7" fill="#4FD1C5"><animate attributeName="r" values="6;9;6" dur="1s" repeatCount="indefinite"/></circle>
+        <circle cx="1123" cy="200" r="7" fill="#4FD1C5"><animate attributeName="r" values="6;9;6" dur="1s" begin="0.5s" repeatCount="indefinite"/></circle>
+        <circle cx="1007" cy="122" r="7" fill="#FFD166"><animate attributeName="r" values="6;9;6" dur="1s" begin="0.25s" repeatCount="indefinite"/></circle>
+      </g>
+    </g>
+
+
+    <!-- ADAS : LiDAR scan + object detection -->
+    <defs>
+      <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#3DDC84" stop-opacity="0.45"/>
+        <stop offset="1" stop-color="#3DDC84" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M1072 166 L1280 214 L1280 332 Z" fill="url(#beam)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+    <g fill="none" stroke="#3DDC84" stroke-width="2">
+      <path d="M1112 175 Q1124 210 1112 252" stroke-opacity="0">
+        <animate attributeName="d" values="M1092 170 Q1100 200 1092 220;M1262 210 Q1290 270 1262 328" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.9;0" dur="1.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M1112 175 Q1124 210 1112 252" stroke-opacity="0">
+        <animate attributeName="d" values="M1092 170 Q1100 200 1092 220;M1262 210 Q1290 270 1262 328" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.9;0" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <circle cx="1072" cy="166" r="6" fill="#3DDC84"/>
+    <!-- detected object -->
+    <path d="M1236 330 L1248 300 L1260 330 Z" fill="#FF9F1C"/>
+    <path d="M1240 312 H1256" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="1226" y="290" width="44" height="44" fill="none" stroke="#3DDC84" stroke-width="2" stroke-dasharray="5 3">
+      <animate attributeName="stroke-opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="1268" y="284" text-anchor="end" class="mono" font-size="11" font-weight="700" fill="#3DDC84">OBJ 8.2m</text>
+
+    <!-- HUD -->
+    <g class="mono" font-weight="700">
+      <rect x="1060" y="40" width="190" height="96" rx="10" fill="#050912" fill-opacity="0.75" stroke="#1E2E50"/>
+      <text x="1076" y="64" font-size="11" fill="#5D739B">SPEED</text>
+      <g font-size="28" fill="#FFFFFF">
+        <text x="1076" y="96">58<animate attributeName="opacity" values="1;0;0;0" dur="2.4s" repeatCount="indefinite"/></text>
+        <text x="1076" y="96" opacity="0">61<animate attributeName="opacity" values="0;1;0;0" dur="2.4s" repeatCount="indefinite"/></text>
+        <text x="1076" y="96" opacity="0">63<animate attributeName="opacity" values="0;0;1;0" dur="2.4s" repeatCount="indefinite"/></text>
+        <text x="1076" y="96" opacity="0">60<animate attributeName="opacity" values="0;0;0;1" dur="2.4s" repeatCount="indefinite"/></text>
+      </g>
+      <text x="1122" y="96" font-size="12" fill="#8FA4C8">km/h</text>
+      <text x="1180" y="64" font-size="11" fill="#5D739B">PITCH</text>
+      <text x="1180" y="96" font-size="20" fill="#FFD166">4.3°</text>
+      <circle cx="1080" cy="120" r="4" fill="#3DDC84"><animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/></circle>
+      <text x="1090" y="124" font-size="11" fill="#3DDC84">CAN 500k · ADAS ON</text>
+    </g>
+
+    <!-- CAN differential waveform under the road -->
+    <svg x="720" y="384" width="540" height="30" viewBox="0 0 540 30">
+      <g fill="none" stroke-width="2">
+        <animateTransform attributeName="transform" type="translate" values="0 0;-120 0" dur="2s" repeatCount="indefinite"/>
+        <path stroke="#FF6B4A" d="M0 8 H20 V2 H50 V8 H70 V2 H80 V8 H120 V2 H140 V8 H160 V2 H200 V8 H240 V2 H260 V8 H280 V2 H320 V8 H360 V2 H380 V8 H400 V2 H440 V8 H480 V2 H500 V8 H520 V2 H560 V8 H600 V2 H620 V8 H660 V2 H680 V8"/>
+        <path stroke="#4FD1C5" d="M0 22 H20 V28 H50 V22 H70 V28 H80 V22 H120 V28 H140 V22 H160 V28 H200 V22 H240 V28 H260 V22 H280 V28 H320 V22 H360 V28 H380 V22 H400 V28 H440 V22 H480 V28 H500 V22 H520 V28 H560 V22 H600 V28 H620 V22 H660 V28 H680 V22"/>
+      </g>
+    </svg>
+  </g>
+  <rect x="0.5" y="0.5" width="1279" height="419" rx="20" fill="none" stroke="#2C4370"/>
+</svg>
